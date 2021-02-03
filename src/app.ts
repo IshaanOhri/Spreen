@@ -31,19 +31,19 @@ app.use(cors());
 // Body parser
 app.use(express.json());
 
-app.get('/', (req: any, res: any) => {
-	res.redirect(`/${uuidv4()}`);
-});
+// app.get('/', (req: any, res: any) => {
+// 	res.redirect(`/${uuidv4()}`);
+// });
 
-app.get('/:room', (req: any, res: any) => {
-	res.render('room', { roomId: req.params.room });
-});
+// app.get('/:room', (req: any, res: any) => {
+// 	res.render('room', { roomId: req.params.room });
+// });
 
-io.on('connection', (socket: any) => {
-	socket.io('join-room', (roomId: any, userId: any) => {
-		console.log(roomId, userId);
-	});
-});
+// io.on('connection', (socket: any) => {
+// 	socket.io('join-room', (roomId: any, userId: any) => {
+// 		console.log(roomId, userId);
+// 	});
+// });
 
 // // Import routers
 // app.use(router);
