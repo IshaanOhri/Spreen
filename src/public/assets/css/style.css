@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
 .center {
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 img {
@@ -17,6 +32,10 @@ img {
 h3 {
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+.feature-desc {
+	font-weight: 300;
 }
 
 .float {
@@ -38,7 +57,7 @@ h3 {
 
 .share {
 	border: 0px solid black;
-	background-image: url('https://raw.githubusercontent.com/IshaanOhri/screen-share/master/src/views/public/share.png');
+	background-image: url('https://raw.githubusercontent.com/IshaanOhri/screen-share/master/public/assets/share.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -64,7 +83,7 @@ h3 {
 	margin: auto;
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%;
+	width: 50%;
 }
 
 /* The Close Button */
@@ -80,4 +99,60 @@ h3 {
 	color: #000;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+#video-grid {
+	width: auto;
+	height: auto;
+	padding: 20px;
+}
+
+#start-share,
+#stop-share {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(210, 100, 90);
+	padding: 10px 20px;
+	color: white;
+}
+
+#home-btn {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(74, 45, 200);
+	padding: 10px 20px;
+	color: white;
+	font-size: 1.5em;
+}
+
+.error {
+	margin: 0;
+	margin-left: 5%;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	max-width: 30%;
+}
+
+.error > p {
+	color: rgb(74, 45, 200);
+	font-size: 2.5em;
+}
+
+#ip-add {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(74, 45, 200);
+	color: white;
+	padding: 5px 10px;
+	width: min-content;
+}
+
+#barcode {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width: 30%;
+	height: 30%;
+	padding: 10px;
 }

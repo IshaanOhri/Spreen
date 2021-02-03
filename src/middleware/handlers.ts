@@ -2,11 +2,12 @@
  * @Author: Ishaan Ohri
  * @Date: 2021-02-03 14:27:26
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-03 22:09:38
+ * @Last Modified time: 2021-02-04 01:06:40
  * @Description: Contains all handlers like try/catch, not found and all response handlers
  */
 
 import { Request, Response, NextFunction } from 'express';
+import path from 'path';
 import { status, message } from '../config';
 import { HttpError, HttpErrorHandler, HttpResponse, HttpResponseHandler } from '../handlers';
 import logger from '../log/config';
@@ -20,7 +21,7 @@ const catchAsync = (fn: any) => {
 
 // No route found
 const notFound = (req: Request, res: Response, next: NextFunction) => {
-	next(new HttpError(status.notFound, null, message.notFound));
+	res.render('error');
 };
 
 // All response handlers

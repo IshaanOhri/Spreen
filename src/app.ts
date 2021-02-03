@@ -2,7 +2,7 @@
  * @Author: Ishaan Ohri
  * @Date: 2021-02-03 14:14:17
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-03 22:18:29
+ * @Last Modified time: 2021-02-04 02:13:40
  * @Description: Main driver file for the server
  */
 
@@ -20,9 +20,9 @@ import { notFound, responseHandler } from './middleware';
 // Initializing Express App
 const app: Application = express();
 
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
-// app.set('views', path.join(__dirname, './views'));
+app.set('views', path.join(__dirname, 'views'));
 
 const server = createServer(app);
 const io = new Server(server);
@@ -47,13 +47,14 @@ app.use(express.json());
 // 	});
 // });
 
-io.on('connection', (socket: Socket) => {
-	socket.on('join', () => {
-		console.log('connected');
-	});
+io.on('connection', (socket) => {
+	socket.on('join', (roomId: any, userId: any) => {
+		socket.join(roomId);
+		socket.to(roomId).broadcast.emit('user-connected', userId);
 
-	socket.on('disconnect', () => {
-		console.log('disconnected');
+		socket.on('disconnect', () => {
+			socket.to(roomId).broadcast.emit('user-disconnected', userId);
+		});
 	});
 });
 
