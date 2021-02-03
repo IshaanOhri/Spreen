@@ -2,7 +2,7 @@
  * @Author: Ishaan Ohri
  * @Date: 2021-02-03 14:24:40
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-03 14:28:41
+ * @Last Modified time: 2021-02-03 21:15:11
  * @Description: Contains the HTTP Error Template and HTTP Error Handler
  */
 
