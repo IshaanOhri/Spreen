@@ -8,6 +8,8 @@
 
 import express, { Application } from 'express';
 import cors from 'cors';
+import { v4 as uuidv4 } from 'uuid';
+import path from 'path';
 import { router } from './api/routes';
 import { PORT, HOST } from './config';
 import logger from './log/config';
@@ -16,23 +18,41 @@ import { notFound, responseHandler } from './middleware';
 // Initializing Express App
 const app: Application = express();
 
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.set('views', path.join(__dirname, './views'));
+
+const server = require('http').createServer(app);
+const io = require('socket.io')(server);
+
 // CORS
 app.use(cors());
 
 // Body parser
 app.use(express.json());
 
-// Connect to Database
-require('./database/database');
+app.get('/', (req: any, res: any) => {
+	res.redirect(`/${uuidv4()}`);
+});
 
-// Import routers
-app.use('/api/v1', router);
+app.get('/:room', (req: any, res: any) => {
+	res.render('room', { roomId: req.params.room });
+});
 
-// Not found handler
-app.use(notFound);
+io.on('connection', (socket: any) => {
+	socket.io('join-room', (roomId: any, userId: any) => {
+		console.log(roomId, userId);
+	});
+});
 
-// All response handlers
-app.use(responseHandler);
+// // Import routers
+// app.use(router);
+
+// // Not found handler
+// app.use(notFound);
+
+// // All response handlers
+// app.use(responseHandler);
 
 // Start Express App
 app.listen(PORT, HOST, () => {
