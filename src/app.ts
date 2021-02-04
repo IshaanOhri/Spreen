@@ -1,8 +1,9 @@
+/* eslint-disable prefer-template */
 /*
  * @Author: Ishaan Ohri
  * @Date: 2021-02-03 14:14:17
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-04 02:13:40
+ * @Last Modified time: 2021-02-04 08:22:55
  * @Description: Main driver file for the server
  */
 
@@ -48,7 +49,7 @@ app.use(express.json());
 // });
 
 io.on('connection', (socket) => {
-	socket.on('join', (roomId: any, userId: any) => {
+	socket.on('join', ({ roomId, userId }: { roomId: number; userId: string }) => {
 		socket.join(roomId);
 		socket.to(roomId).broadcast.emit('user-connected', userId);
 

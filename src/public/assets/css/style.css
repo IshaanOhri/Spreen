@@ -104,7 +104,19 @@ h3 {
 #video-grid {
 	width: auto;
 	height: auto;
-	padding: 20px;
+	margin: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+#watch-video-grid {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 
 #start-share,
