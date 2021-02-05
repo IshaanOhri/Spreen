@@ -29,15 +29,7 @@ git clone https://github.com/IshaanOhri/Spreen
 npm ci
 ```
 
-#### Development environment:
-
-- Create `dev.env` file and add environment variables according to `example.env`:
-
-```
-touch ./src/config/dev.env
-```
-
-- Start server:
+#### Start server:
 
 ```
 npm run dev
