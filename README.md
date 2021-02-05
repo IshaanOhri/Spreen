@@ -32,7 +32,13 @@ npm ci
 #### Start server:
 
 ```
-npm run dev
+npm start
+```
+
+#### Open browser:
+
+```
+http://localhost:3000
 ```
 
 ## Contributing
