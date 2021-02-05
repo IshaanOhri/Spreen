@@ -3,6 +3,10 @@
 	font-family: 'Roboto', sans-serif;
 }
 
+body {
+	background-color: #f0f0f0;
+}
+
 .center {
 	text-align: center;
 	margin-left: auto;
@@ -44,22 +48,28 @@ h3 {
 	height: 60px;
 	bottom: 40px;
 	right: 40px;
-	background-color: #0c9;
+	background-color: rgb(74, 45, 200);
 	color: #fff;
 	border-radius: 50px;
 	text-align: center;
 	box-shadow: 2px 2px 3px #999;
 }
 
-.my-float {
-	margin-top: 22px;
+.github {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 40px;
+	left: 40px;
+	background-color: rgb(74, 45, 200);
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
 }
 
-.share {
-	border: 0px solid black;
-	background-image: url('https://raw.githubusercontent.com/IshaanOhri/screen-share/master/public/assets/share.png');
-	background-repeat: no-repeat;
-	background-size: cover;
+.my-float2 {
+	margin-top: 22px;
 }
 
 /* The Modal (background) */
@@ -173,5 +183,13 @@ h3 {
 	background-color: rgb(245, 189, 79);
 	color: white;
 	padding: 5px 10px;
+	width: fit-content;
+}
+
+#x {
+	border: 0px solid black;
+	background-color: red;
+	background-repeat: no-repeat;
+	background-size: cover;
 	width: fit-content;
 }
