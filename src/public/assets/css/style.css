@@ -53,6 +53,7 @@ h3 {
 	border-radius: 50px;
 	text-align: center;
 	box-shadow: 2px 2px 3px #999;
+	border: 0px solid black;
 }
 
 .github {
@@ -66,6 +67,7 @@ h3 {
 	border-radius: 50px;
 	text-align: center;
 	box-shadow: 2px 2px 3px #999;
+	border: 0px solid black;
 }
 
 .my-float2 {
