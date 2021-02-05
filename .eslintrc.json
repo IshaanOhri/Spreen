@@ -3,6 +3,7 @@
 		"es2021": true,
 		"node": true
 	},
+	"ignorePath": ".gitignore",
 	"extends": [
 		"airbnb-base",
 		"plugin:import/errors",
