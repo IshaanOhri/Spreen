@@ -37,8 +37,16 @@ npm start
 
 #### Open browser:
 
+- Start screen share
+
 ```
 http://localhost:3000
+```
+
+- View screen share
+
+```
+http://localhost:3000/watch
 ```
 
 ## Contributing
