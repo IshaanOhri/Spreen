@@ -23,7 +23,8 @@ Description
 git clone https://github.com/IshaanOhri/Spreen
 ```
 
-1. Method 1 - Using NPM Script
+1. ### Method 1 - Using NPM Script
+
 #### Install packages
 
 ```
@@ -36,13 +37,13 @@ npm ci
 npm start
 ```
 
-2. Method 2 - Using Docker
+2. ### Method 2 - Using Docker
+
 #### Start docker container:
 
 ```
 docker-compose up
 ```
-
 
 #### Open browser:
 
