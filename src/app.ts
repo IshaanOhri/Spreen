@@ -3,7 +3,7 @@
  * @Author: Ishaan Ohri
  * @Date: 2021-02-03 14:14:17
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-04 08:22:55
+ * @Last Modified time: 2021-02-05 09:55:26
  * @Description: Main driver file for the server
  */
 
@@ -34,27 +34,14 @@ app.use(cors());
 // Body parser
 app.use(express.json());
 
-// app.get('/', (req: any, res: any) => {
-// 	res.redirect(`/${uuidv4()}`);
-// });
-
-// app.get('/:room', (req: any, res: any) => {
-// 	res.render('room', { roomId: req.params.room });
-// });
-
-// io.on('connection', (socket: any) => {
-// 	socket.io('join-room', (roomId: any, userId: any) => {
-// 		console.log(roomId, userId);
-// 	});
-// });
-
-io.on('connection', (socket) => {
-	socket.on('join', ({ roomId, userId }: { roomId: number; userId: string }) => {
+io.on('connection', (socket: Socket) => {
+	socket.on('join', ({ roomId, user }: { roomId: string; user: string }) => {
 		socket.join(roomId);
-		socket.to(roomId).broadcast.emit('user-connected', userId);
+		socket.to(roomId).broadcast.emit('user-connected', user);
+		// console.log(roomId, user);
 
 		socket.on('disconnect', () => {
-			socket.to(roomId).broadcast.emit('user-disconnected', userId);
+			socket.to(roomId).broadcast.emit('user-disconnected', user);
 		});
 	});
 });

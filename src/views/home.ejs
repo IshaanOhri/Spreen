@@ -94,7 +94,11 @@
 					<br />
 					<br />
 					<p>or type the following address manually in the address bar:</p>
-					<p id="ip-add" class="center">http://<%= ip %>:3000/watch</p>
+					<a href="http://<%= ip %>:3000/watch" target="_blank" style="text-decoration: none"
+						><p id="ip-add" class="center">http://<%= ip %>:3000/watch</p></a
+					>
+					<p><i>Ensure you connect to the client before starting the screen share</i></p>
+					<p id="client-status" class="center">Waiting for client to connect</p>
 				</div>
 				<div id="video-grid"></div>
 				<div class="center">
@@ -107,7 +111,7 @@
 	</body>
 
 	<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
-	<!-- <script src="/socket.io/socket.io.js"></script> -->
+	<script src="/socket.io/socket.io.js"></script>
 	<script src="./js/home.js"></script>
 	<!-- <script>
 		const IP = '<%= ip %>';

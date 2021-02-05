@@ -105,9 +105,7 @@ h3 {
 	width: auto;
 	height: auto;
 	margin: 20px;
-	position: absolute;
-	top: 0;
-	left: 0;
+	text-align: center;
 }
 
 #watch-video-grid {
@@ -167,4 +165,13 @@ h3 {
 	width: 30%;
 	height: 30%;
 	padding: 10px;
+}
+
+#client-status {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(245, 189, 79);
+	color: white;
+	padding: 5px 10px;
+	width: fit-content;
 }

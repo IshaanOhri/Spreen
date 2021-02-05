@@ -4,15 +4,31 @@ const span = document.getElementsByClassName('close')[0];
 const startBtn = document.getElementById('start-share');
 const stopBtn = document.getElementById('stop-share');
 const videoGrid = document.getElementById('video-grid');
+const clientStatus = document.getElementById('client-status');
 const video = document.createElement('video');
 video.muted = true;
 
-var peer = new Peer('18bce0265');
-var conn = peer.connect('18bce0300');
+let myId;
+let clientId = null;
+
+const socket = io();
+
+var peer = new Peer();
+
+socket.on('user-connected', (newUser) => {
+	if (clientId === null) {
+		clientId = newUser;
+		const conn = peer.connect(newUser);
+		console.log('Client peer ID is: ' + newUser);
+		clientStatus.style.backgroundColor = '#61C454';
+		clientStatus.innerHTML = 'Client connected Successfully';
+	}
+});
 
 peer.on('open', function (id) {
 	console.log('My peer ID is: ' + id);
-	// document.getElementById('my-id').innerHTML = id;
+	myId = id;
+	socket.emit('join', { roomId: 'ScreenShare', user: id });
 });
 
 // When the user clicks the button, open the modal
@@ -33,9 +49,9 @@ window.onclick = function (event) {
 };
 
 function stopScreen(stream) {
-	stream.getTracks().forEach((track) => track.stop());
 	video.srcObject = null;
 	videoGrid.innerHTML = null;
+	stream.getTracks().forEach((track) => track.stop());
 
 	startBtn.disabled = false;
 	stopBtn.disabled = true;
@@ -50,6 +66,8 @@ function shareScreen() {
 
 		video.style.width = '50%';
 		video.style.height = '50%';
+		video.style.marginLeft = 'auto';
+		video.style.marginRight = 'auto';
 
 		video.addEventListener('loadedmetadata', () => {
 			video.play();
@@ -65,21 +83,31 @@ function shareScreen() {
 			stopScreen(stream);
 		};
 
-		var call = peer.call('18bce0300', stream);
-
-		call.on('stream', function (stream) {
-			const video2 = document.createElement('video');
-			video2.muted = true;
-
-			video2.srcObject = stream;
-
-			video2.style.width = '50%';
-			video2.style.height = '50%';
-
-			video2.addEventListener('loadedmetadata', () => {
-				video2.play();
-			});
-			videoGrid.append(video2);
+		socket.on('user-disconnected', (disconnectedUser) => {
+			console.log('Client peer ID disconnected is: ' + disconnectedUser);
+			if (disconnectedUser === clientId) {
+				clientId = null;
+				clientStatus.style.backgroundColor = '#EE695E';
+				clientStatus.innerHTML = 'Client disconnected';
+				stopScreen(stream);
+			}
 		});
+
+		var call = peer.call(clientId, stream);
+
+		// call.on('stream', function (stream) {
+		// 	video.srcObject = stream;
+
+		// 	video.style.width = '50%';
+		// 	video.style.height = '50%';
+		// 	video.style.marginLeft = 'auto';
+		// 	video.style.marginRight = 'auto';
+
+		// 	video.addEventListener('loadedmetadata', () => {
+		// 		video.play();
+		// 	});
+
+		// 	videoGrid.append(video);
+		// });
 	});
 }
