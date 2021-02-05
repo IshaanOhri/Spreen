@@ -12,6 +12,8 @@ var peer = new Peer();
 
 var conn = peer.connect();
 
+document.getElementById('myid').innerHTML = '123';
+
 peer.on('open', function (id) {
 	console.log('My peer ID is: ' + id);
 	myId = id;
