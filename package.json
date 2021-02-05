@@ -7,7 +7,8 @@
 		"dev": "env-cmd -f ./src/config/dev.env nodemon ./src/app.ts",
 		"pretty-quick": "pretty-quick",
 		"update": "npx npm-check-updates -u",
-		"build": "tsc --project tsconfig.json"
+		"build": "tsc --project tsconfig.json",
+		"start": "env-cmd -f ./src/config/dev.env ts-node ./src/app.ts"
 	},
 	"keywords": [],
 	"author": "",
