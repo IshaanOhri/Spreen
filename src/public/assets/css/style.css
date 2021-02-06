@@ -7,6 +7,21 @@ body {
 	background-color: #f0f0f0;
 }
 
+h1 {
+	display: inline-block;
+	padding-bottom: 5px;
+	position: relative;
+}
+h1:before {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	bottom: 0;
+	left: 25%;
+	border-bottom: 3px solid rgb(74, 45, 200);
+}
+
 .center {
 	text-align: center;
 	margin-left: auto;
@@ -21,13 +36,6 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-img {
-	border: 1px solid #000000;
-	border-radius: 50%;
-	width: 30%;
-	height: 30%;
-}
-
 .col-sm {
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -40,6 +48,22 @@ h3 {
 
 .feature-desc {
 	font-weight: 300;
+}
+
+.feature-img {
+	display: inline-block;
+	position: relative;
+	width: 10vh;
+	height: 10vh;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 3px solid rgb(74, 45, 200);
+	padding: 10px;
+}
+
+.feature-img img {
+	width: auto;
+	height: 100%;
 }
 
 .float {
