@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+* {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	background-color: #f0f0f0;
+}
+
+h1 {
+	display: inline-block;
+	padding-bottom: 5px;
+	position: relative;
+}
+h1:before {
+	content: '';
+	position: absolute;
+	width: 50%;
+	height: 1px;
+	bottom: 0;
+	left: 25%;
+	border-bottom: 3px solid rgb(74, 45, 200);
+}
+
+.center {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.container {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.col-sm {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.feature-desc {
+	font-weight: 300;
+}
+
+.feature-img {
+	display: inline-block;
+	position: relative;
+	width: 10vh;
+	height: 10vh;
+	overflow: hidden;
+	border-radius: 50%;
+	border: 3px solid rgb(74, 45, 200);
+	padding: 10px;
+}
+
+.feature-img img {
+	width: auto;
+	height: 100%;
+}
+
+.float {
+	position: fixed;
+	width: 60px;
+	height: 60px;
+	bottom: 40px;
+	right: 40px;
+	background-color: rgb(74, 45, 200);
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+	border: 0px solid black;
+}
+
+.github {
+	width: 60px;
+	height: 60px;
+	background-color: rgb(74, 45, 200);
+	color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	box-shadow: 2px 2px 3px #999;
+	border: 0px solid black;
+}
+
+.my-float2 {
+	margin-top: 22px;
+}
+
+/* The Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0, 0, 0); /* Fallback color */
+	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 50%;
+}
+
+/* The Close Button */
+.close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+#video-grid {
+	width: auto;
+	height: auto;
+	margin: 20px;
+	text-align: center;
+}
+
+#watch-video-grid {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+#start-share,
+#stop-share {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(210, 100, 90);
+	padding: 10px 20px;
+	color: white;
+}
+
+#home-btn {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(74, 45, 200);
+	padding: 10px 20px;
+	color: white;
+	font-size: 1.5em;
+}
+
+.error {
+	margin: 0;
+	margin-left: 5%;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	max-width: 30%;
+}
+
+.error > p {
+	color: rgb(74, 45, 200);
+	font-size: 2.5em;
+}
+
+#ip-add {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(74, 45, 200);
+	color: white;
+	padding: 5px 10px;
+	width: min-content;
+}
+
+#barcode {
+	border: 1px solid #000000;
+	border-radius: 5px;
+	width: 30%;
+	height: 30%;
+	padding: 10px;
+}
+
+#client-status {
+	border-radius: 5px;
+	border: 0px solid white;
+	background-color: rgb(245, 189, 79);
+	color: white;
+	padding: 5px 10px;
+	width: fit-content;
+}
+
+#x {
+	border: 0px solid black;
+	background-color: red;
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: fit-content;
+}
