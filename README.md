@@ -17,11 +17,13 @@ Description
 
 ## Steps to start server
 
-#### Clone repository
+#### 1. Clone repository
 
 ```
 git clone https://github.com/IshaanOhri/Spreen
 ```
+
+#### 2. Start Spreen server
 
 - #### Method 1 - Using NPM Script
 
@@ -45,7 +47,7 @@ npm start
 docker-compose up
 ```
 
-#### Open browser:
+#### 3. Open browser:
 
 - Start screen share
 
