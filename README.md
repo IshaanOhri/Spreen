@@ -12,7 +12,7 @@
 <br>
 
 <p align="center">
-Description
+  Now use any device with a web browser as a second screen for your laptop or PC. No cables. No internet. No software installation. Just Spreen, that's it.
 </p>
 
 ## Steps to start server
