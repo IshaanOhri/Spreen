@@ -1,18 +1,18 @@
 /*
  * @Author: Ishaan Ohri
- * @Date: 2021-02-03 14:23:55
+ * @Date: 2021-02-07 17:19:58
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-03 19:15:58
- * @Description: Contains all miscellaneous routes
+ * @Last Modified time: 2021-02-07 17:21:43
+ * @Description:
  */
 
 import { Router } from 'express';
-import { health } from '../controllers';
+import { error } from '../controllers';
 
 const miscRouter: Router = Router();
 
-// @desc	Health Route
-// @route	GET /health
-miscRouter.get('/health', health);
+// @desc	Error Route
+// @route	GET *
+miscRouter.get('*', error);
 
 export { miscRouter };

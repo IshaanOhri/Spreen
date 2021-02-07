@@ -1,21 +1,15 @@
 /*
  * @Author: Ishaan Ohri
- * @Date: 2021-02-03 14:23:21
+ * @Date: 2021-02-07 17:20:48
  * @Last Modified by: Ishaan Ohri
- * @Last Modified time: 2021-02-03 19:16:23
- * @Description: Defines functions for all miscellaneous routes
+ * @Last Modified time: 2021-02-07 17:21:10
+ * @Description:
  */
 
 import { NextFunction, Request, Response } from 'express';
-import { status, message } from '../../config';
-import { HttpResponse } from '../../handlers';
-import { catchAsync } from '../../middleware';
 
-// Health route
-const health = catchAsync(
-	async (req: Request, res: Response, next: NextFunction): Promise<void> => {
-		next(new HttpResponse(status.ok, null, message.healthRoute));
-	}
-);
-
-export { health };
+// Error route
+const error = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+	res.render('error');
+};
+export { error };
