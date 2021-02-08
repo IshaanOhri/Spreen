@@ -25,8 +25,6 @@ git clone https://github.com/IshaanOhri/Spreen
 
 #### 2. Start Spreen server
 
-- #### Method 1 - Using NPM Script
-
 #### Install packages
 
 ```
@@ -37,14 +35,6 @@ npm ci
 
 ```
 npm start
-```
-
-- #### Method 2 - Using Docker
-
-#### Start docker container:
-
-```
-docker-compose up
 ```
 
 #### 3. Open browser:
