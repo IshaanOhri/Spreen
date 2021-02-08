@@ -3,7 +3,7 @@
  * @Date: 2021-02-03 19:15:14
  * @Last Modified by: Ishaan Ohri
  * @Last Modified time: 2021-02-04 01:07:51
- * @Description:
+ * @Description: Router for all sharing related routes
  */
 import { Router } from 'express';
 import { home, watch } from '../controllers';

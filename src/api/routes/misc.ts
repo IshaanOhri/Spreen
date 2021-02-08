@@ -3,7 +3,7 @@
  * @Date: 2021-02-07 17:19:58
  * @Last Modified by: Ishaan Ohri
  * @Last Modified time: 2021-02-07 17:21:43
- * @Description:
+ * @Description: Router for all misc routes
  */
 
 import { Router } from 'express';

@@ -19,10 +19,12 @@ import logger from './log/config';
 // Initializing Express App
 const app: Application = express();
 
+// EJS and static files
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 
+// Creating Socket.io and HTTP Server
 const server = createServer(app);
 const io = new Server(server);
 
@@ -32,6 +34,7 @@ app.use(cors());
 // Body parser
 app.use(express.json());
 
+// Establishing io connections
 io.on('connection', (socket: Socket) => {
 	socket.on('join', ({ roomId, user }: { roomId: string; user: string }) => {
 		socket.join(roomId);
