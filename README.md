@@ -25,13 +25,13 @@ git clone https://github.com/IshaanOhri/Spreen
 
 #### 2. Start Spreen server
 
-#### Install packages
+- Install packages
 
 ```
 npm ci
 ```
 
-#### Start server:
+- Start server:
 
 ```
 npm start
