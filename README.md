@@ -48,7 +48,7 @@ http://localhost:3000
 - View screen share
 
 ```
-http://localhost:3000/watch
+http://<LOCAL_IP>:3000/watch
 ```
 
 ## Contributing
