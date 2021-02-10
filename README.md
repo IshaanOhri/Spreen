@@ -25,26 +25,16 @@ git clone https://github.com/IshaanOhri/Spreen
 
 #### 2. Start Spreen server
 
-- #### Method 1 - Using NPM Script
-
-#### Install packages
+- Install packages
 
 ```
 npm ci
 ```
 
-#### Start server:
+- Start server:
 
 ```
 npm start
-```
-
-- #### Method 2 - Using Docker
-
-#### Start docker container:
-
-```
-docker-compose up
 ```
 
 #### 3. Open browser:
@@ -58,7 +48,7 @@ http://localhost:3000
 - View screen share
 
 ```
-http://localhost:3000/watch
+http://<LOCAL_IP>:3000/watch
 ```
 
 ## Contributing
